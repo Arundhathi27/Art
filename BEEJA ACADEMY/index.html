@@ -1,0 +1,145 @@
+<html>
+<head>
+  <title>Ghibli Art Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(#e0c3fc,#8ec5fc);
+      color: black;
+      text-align: center;
+    }
+    #container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px;
+    }
+    #header {
+      margin-bottom: 30px;
+    }
+    #header h1 {
+      font-size: 3em;
+      font-weight: bold;
+      color: black;
+      text-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+    #nav {
+      list-style-type: none;
+      margin-top: 20px;
+      padding: 0;
+    }
+    #nav li {
+      display: inline;
+      margin: 0 20px;
+    }
+    #nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    #nav a:hover {
+      color: black;
+    }
+    section {
+      display: none;
+      padding: 40px 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      margin-top: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+    section.active {
+      display: block;
+    }
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: auto;
+    }
+    button {
+      margin-top: 30px;
+      padding: 12px 30px;
+      font-size: 1em;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    #images-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    #images-gallery img {
+      width: 200px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+    #images-gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1>Ghibli Art</h1>
+      <ul id="nav">
+        <li><a href="#" onclick="showSection('home')">HOME</a></li>
+        <li><a href="#" onclick="showSection('about')">ABOUT</a></li>
+        <li><a href="#" onclick="showSection('images')">IMAGES</a></li>
+      </ul>
+    </div>
+    <section id="home" class="active">
+      <h2>Welcome to My Ghibli Art Gallery</h2>
+      <p>Explore whimsical and magical illustrations inspired by Studio Ghibli.</p>
+      <button onclick="showSection('images')">Go to Images</button>
+    </section>
+    <section id="about">
+      <h2>About Ghibli Art</h2>
+      <p>
+        Ghibli art is inspired by the magical worlds created by Studio Ghibli, known for its breathtaking animation, deep storytelling, and emotional resonance. The artwork often features nature, fantasy creatures, and dreamlike landscapes that transport viewers to another realm.
+      </p>
+    </section>
+    <section id="images">
+      <h2>My Ghibli-Inspired Artwork</h2>
+      <div id="images-gallery">
+        <img src="./images/1.jpeg" alt="art 1">
+        <img src="./images/2.jpeg" alt="art 2">
+        <img src="./images/3.jpeg" alt="art 3">
+        <img src="./images/4.jpeg" alt="art 4">
+        <img src="./images/5.jpeg" alt="art 5">
+        <img src="./images/6.jpeg" alt="art 6">
+        <img src="./images/7.jpeg" alt="art 7">
+        <img src="./images/8.jpeg" alt="art 8">
+      </div>
+    </section>
+  </div>
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => section.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
